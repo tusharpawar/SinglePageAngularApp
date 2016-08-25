@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Single Page Appication</title>
+		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+	</head>
+	<body>
+		<h1>Angular Js </h1>
+
+		<div ng-app="mainApp" ng-controller="SayHelloController">
+			<p>Press button to print Hello</p>
+			<button ng-click="sayHello()">Say Hello</button>
+			<p>Result:{{result}}</p>
+		</div>
+
+
+		<script >
+
+			//Application module		
+			var mainApp=angular.module("mainApp",[]);
+
+			//Service 
+			mainApp.service("sayHelloService",function(){
+				this.sayHello=function(){
+					return "Hello";
+				}
+			});
+
+			//Controller
+			mainApp.controller("SayHelloController",function($scope,sayHelloService){
+				
+				$scope.sayHello=function(){
+					$scope.result=sayHelloService.sayHello()
+				}	
+
+			});
+
+		</script>
+
+	</body>
+</html>
+
