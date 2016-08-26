@@ -5,13 +5,71 @@
 
 	</head>
 	<body>
-		<h1>Angular Js </h1>
 
-		<div ng-app="mainApp" ng-controller="SayHelloController">
+	
+	<style type="text/css">
+		div.container {
+		    width: 100%;
+		    border: 1px solid gray;
+		}
+
+		header, footer {
+		    padding: 1em;
+		    color: white;
+		    background-color: black;
+		    clear: left;
+		    text-align: center;
+		}
+
+		#leftcol{
+		    float: left;
+		    max-width: 160px;
+		    margin: 0;
+		    padding: 1em;
+		    border-right: 1px solid gray;
+		}
+		#righttcol {
+		    float: left;
+		    max-width: 160px;
+		    margin: 0;
+		    padding: 1em;
+		   border-left: 1px solid gray;
+		}
+		#righttcol {
+		    
+		    max-width: 160px;
+		    margin: 0;
+		    padding: 1em;
+		   border-left: 1px solid gray;
+		   		    border-right: 1px solid gray;
+
+		}
+
+		
+
+	</style>
+
+		<header>Angular Js </header>
+		
+		
+		<div id="middlecol" ng-app="mainApp" ng-init="users=[{name:'Tushar'},{name:'Reshma'},{name:'Hemant'},{name:'Ragini'}]" ng-controller="SayHelloController">
 			<p>Press button to print Hello</p>
 			<button ng-click="sayHello()">Say Hello</button>
 			<p>Result:{{result}}</p>
+
+			<p>List of Users:</p>
+			<ol>
+				<li ng-repeat="user in users">
+						<p>{{user.name}}</p>
+				</li>
+			</ol>
 		</div>
+
+		
+
+		
+
+		<footer>Copyright © Tushar Pawar</footer>
 
 
 		<script >
