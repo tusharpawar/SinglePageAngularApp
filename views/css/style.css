@@ -8,12 +8,7 @@ header, footer {
     text-align: center;
 }
 
-html, body {
-    margin: 0;
-}
-div {
-    float: left;
-}
+
 #left {
     width:220px;
     margin: 5px;

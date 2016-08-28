@@ -2,6 +2,13 @@
 	<head>
 		<title>Single Page Appication</title>
 		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<script src = "../app/mainApp.js"></script>
       	<script src = "../app/controllers/sayHelloController.js"></script>
       	<script src = "../app/controllers/mainController.js"></script>
@@ -9,53 +16,72 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 
+
 	</head>
+
 	<body ng-app="mainApp">
 
-	
-	
-
-		<header>Angular Js </header>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">SinglePageApp</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		      <li class="active"><a href="#">Home</a></li>
+		    </ul>
+		  </div>
+		</nav>
 		
-		
-		<div id="left" class="hello"   ng-controller="sayHelloController">
-			<p>Press button to print Hello</p>
-			<button ng-click="sayHello()">Say Hello</button>
-			<p>Result:{{result}}</p>
+		<div class="container">	
+			<br><br><br>
+			<div class="jumbotron">
+				<h1>Single Page Application</h1>
+				<p>This is single page Angular application which demonstrate some concepts of AngularJS such as Application module,Directive,Service,Controller,Dependency Injection, Bootstrap etc.</p>
+				
+			</div>
 
-			
+			<div class="row">
+
+				<div class="col-md-3">
+					<h3>Column 1</h3>
+				</div>
+
+				<div class="col-md-3" ng-controller="sayHelloController">
+					<h3>Column 2</h3>
+					<p>Press button to print Hello</p>
+					<button type="button" class="btn btn-primary" ng-click="sayHello()">Say Hello</button>
+					<p>Result:{{result}}</p>
+				</div>
+
+				<div class="col-md-3" ng-controller="mainController">
+					<h3>Column 3</h3>
+					<p>List of Users</p>
+					<ol>
+						<li ng-repeat="user in users">
+									{{user.name}}
+						</li>
+					</ol>	
+					 <div ng-repeat="userToAdd in usersToAdd">
+					 	<form>
+						  <div class="form-group">
+						    <label for="name">Name:</label>
+						    <input type="text" class="form-control" ng-model="userToAdd.name" />
+						  </div>
+					      <button type="button" class="btn btn-primary" ng-click="add(userToAdd)">Add</button>
+					    </form>
+					 </div>
+					 <div>
+					    <button type="button" class="btn btn-primary" ng-click="addNew()">Add User</button>
+					 </div>
+				</div>
+
+				<div class="col-md-3">
+					<h3>Column 4</h3>
+				</div>
+			</div>	
+			<br>
 		</div>
-
-		<div id="center" class="userList"  ng-controller="mainController">
-			<p>List of Users</p>
-
-			<ol>
-				<li ng-repeat="user in users">
-							{{user.name}}
-					
-				</li>
-			</ol>	
-			 <div ng-repeat="userToAdd in usersToAdd">
-			    <input type="text" ng-model="userToAdd.name" />
-			    <button ng-click="add(userToAdd)">Add</button>
-			 </div>
-			 <div>
-			    <button ng-click="addNew()">Add User</button>
-			 </div>
-
-		</div>
-		<div id="right">
-			
-		</div>
-
-
-		
-
-		
-
-		<footer>Copyright © Tushar Pawar</footer>
-
-
+		<footer>Copyright © </footer>
 		
 	</body>
 </html>
