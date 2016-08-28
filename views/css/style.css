@@ -8,7 +8,9 @@ header, footer {
     text-align: center;
 }
 
-
+li{
+	color:red;
+}
 #left {
     width:220px;
     margin: 5px;
@@ -22,3 +24,5 @@ header, footer {
 #right {
     margin: 5px;
     width: 220px;
+}
+

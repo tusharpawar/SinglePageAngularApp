@@ -15,6 +15,7 @@
       	<script src = "../app/services/sayHelloService.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
 	</head>
@@ -56,7 +57,16 @@
 				<div class="col-md-3" ng-controller="mainController">
 					<h3>Column 3</h3>
 					<p>List of Users</p>
-					<ol>
+
+					<script>
+					$(document).ready(function(){
+					    $('#userList').on('click', 'li', function() {
+					        alert("Hello world");
+					    });
+					});
+					</script>
+
+					<ol id=userList>
 						<li ng-repeat="user in users">
 									{{user.name}}
 						</li>
