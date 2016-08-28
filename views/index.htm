@@ -2,62 +2,23 @@
 	<head>
 		<title>Single Page Appication</title>
 		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src = "app/mainApp.js"></script>
-      	<script src = "app/controllers/sayHelloController.js"></script>
-      	<script src = "app/controllers/mainController.js"></script>
-      	<script src = "app/services/sayHelloService.js"></script>
+		<script src = "../app/mainApp.js"></script>
+      	<script src = "../app/controllers/sayHelloController.js"></script>
+      	<script src = "../app/controllers/mainController.js"></script>
+      	<script src = "../app/services/sayHelloService.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
 
 	</head>
 	<body ng-app="mainApp">
 
 	
-	<style type="text/css">
-		div.container {
-		    width: 100%;
-		    border: 1px solid gray;
-		}
-
-		header, footer {
-		    padding: 1em;
-		    color: white;
-		    background-color: black;
-		    clear: left;
-		    text-align: center;
-		}
-
-		#leftcol{
-		    float: left;
-		    max-width: 160px;
-		    margin: 0;
-		    padding: 1em;
-		    border-right: 1px solid gray;
-		}
-		#righttcol {
-		    float: left;
-		    max-width: 160px;
-		    margin: 0;
-		    padding: 1em;
-		   border-left: 1px solid gray;
-		}
-		#righttcol {
-		    
-		    max-width: 160px;
-		    margin: 0;
-		    padding: 1em;
-		   border-left: 1px solid gray;
-		   		    border-right: 1px solid gray;
-
-		}
-
-		
-
-	</style>
+	
 
 		<header>Angular Js </header>
-		    <a href="app/controllers/a.htm">More site</a>
 		
 		
-		<div class="hello"   ng-controller="sayHelloController">
+		<div id="left" class="hello"   ng-controller="sayHelloController">
 			<p>Press button to print Hello</p>
 			<button ng-click="sayHello()">Say Hello</button>
 			<p>Result:{{result}}</p>
@@ -65,21 +26,26 @@
 			
 		</div>
 
-		<div class="userList"  ng-controller="mainController">
-			<p>Hello !...</p>
+		<div id="center" class="userList"  ng-controller="mainController">
+			<p>List of Users</p>
 
-			<div ng-repeat="user in users">
-					{{user.name}}
-				
-			</div>
+			<ol>
+				<li ng-repeat="user in users">
+							{{user.name}}
+					
+				</li>
+			</ol>	
 			 <div ng-repeat="userToAdd in usersToAdd">
 			    <input type="text" ng-model="userToAdd.name" />
-			    <button ng-click="add(userToAdd)">Add User</button>
+			    <button ng-click="add(userToAdd)">Add</button>
 			 </div>
 			 <div>
-			    <button ng-click="addNew()">Add new User</button>
+			    <button ng-click="addNew()">Add User</button>
 			 </div>
 
+		</div>
+		<div id="right">
+			
 		</div>
 
 

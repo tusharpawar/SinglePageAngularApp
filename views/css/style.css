@@ -1,0 +1,29 @@
+
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+html, body {
+    margin: 0;
+}
+div {
+    float: left;
+}
+#left {
+    width:220px;
+    margin: 5px;
+}
+#center {
+	border-left: solid;
+	border-right: solid;
+    margin: 5px 0;
+    width: calc(100% - 460px);
+}
+#right {
+    margin: 5px;
+    width: 220px;
